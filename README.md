@@ -1,1 +1,1 @@
-testirati: dodavanje proizvoda u košaricu, filter prema kategoriji proizvoda, navigaciju prema kategorijama, odabir veličine proizvoda, more details proizvoda
+Test list: adding products to the cart, using filters for certain product categoriws, navigation through categories, select product size & more details of a product
