@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import { HomePage } from '../POMs/homePage';
 
-let homePage: HomePage;
+
 
 
 test('navigate category', async ({ page }) => {
@@ -11,21 +11,9 @@ test('navigate category', async ({ page }) => {
 
   await homePage.goToCategory();
 
-
+  await homePage.assertConsumerGoodsAreOpen();
 
 });
 
-/*
-test('Add item to cart', async () => {
-    // given
-    await homePage.addItemToCart('Phones', 'Samsung galaxy s6');
-    await homePage.assertItemAddedToCart('Product added');
 
-    // when
-    await cartPage.openCart();
-    await cartPage.assertCartIsOpened();
 
-    // then 
-    await cartPage.assertItemIsInCart('Samsung galaxy s6');
-});
-*/
