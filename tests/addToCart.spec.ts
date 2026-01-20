@@ -1,5 +1,8 @@
+
 import { test } from '@playwright/test';
 import { ProductPage } from '../POMs/productPage';
+
+
 
 
 test('adding product to cart', async ({ page }) => {
