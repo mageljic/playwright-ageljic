@@ -11,18 +11,20 @@ test('navigate category', async ({ page }) => {
 
   await homePage.goToCategory();
 
-  await homePage.assertConsumerGoodsAreOpen();
+  await homePage.assertmenShirtLinkIsOpened();
 
 });
 
-test('more details', async ({ page }) => {
+test('products', async ({ page }) => {
   const homePage = new HomePage(page);
 
   await page.goto('https://webshopdemo.concrete5.dk/en');
 
-  await homePage.goToMoreDetails();
+  await homePage.goToCategory();
 
-  await homePage.assertMoreDetailsPageIsOpened();
+  await homePage.goToProduct();
+
+  await homePage.assertproductLinkIsOpened();
 
 });
 
@@ -30,6 +32,10 @@ test('product size', async ({ page }) => {
   const homePage = new HomePage(page);
 
   await page.goto('https://webshopdemo.concrete5.dk/en');
+
+  await homePage.goToCategory();
+
+  await homePage.goToProduct();
 
   await homePage.chooseSize();
 

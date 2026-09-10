@@ -2,38 +2,39 @@ import { Page, Locator, expect } from '@playwright/test';
 
 export class HomePage {
   readonly page: Page;
-  readonly consumerGoodsLink: Locator;
-  readonly moreDetails: Locator;
+  readonly menShirtLink: Locator;
+  readonly productLink: Locator;
   readonly productSize: Locator;
   constructor(page: Page) {
     this.page = page;
-    this.consumerGoodsLink = page.locator('#primary-menu').getByRole('link', { name: 'Consumer Goods' }).first();
-    this.moreDetails = page.locator('#store-form-add-to-cart-list-53').getByRole('link', { name: 'More Details' });
-    this.productSize = page.getByText('XS S M L XL');
+    this.menShirtLink = page.locator('#primary-menu').getByRole('link', { name: 'Men\'s clothing (shirts)' }).first();
+    this.productLink = page.locator('div').filter({ hasText: 'Casual Men\'s Shirt 3541DKK' }).nth(3).getByRole('link', { name: 'Casual Men\'s Shirt 3541' });
+    this.productSize = page.locator('#po21-S');
   }
 
 
    async goToCategory() {
-        await this.consumerGoodsLink.click();
+        await this.menShirtLink.click();
     }
 
-    async assertConsumerGoodsAreOpen(){
-        await expect(this.page).toHaveURL('https://webshopdemo.concrete5.dk/en/webshop-eksempler/forbrugsvare');
+    async assertmenShirtLinkIsOpened(){
+        await expect(this.page).toHaveURL('https://webshopdemo.concrete5.dk/en/webshop-eksempler/webshop-med-herretoj');
     }
 
-    async goToMoreDetails() {
-      await this.moreDetails.click();
+    async goToProduct(){
+      await this.productLink.click();
     }
 
-    async assertMoreDetailsPageIsOpened(){
-      await expect(this.page).toHaveURL('https://webshopdemo.concrete5.dk/en/products/c5dk-rodvin-6-stk');
+    async assertproductLinkIsOpened(){
+      await expect(this.page).toHaveURL('https://webshopdemo.concrete5.dk/en/products/mens-casual-shirt-3541');
     }
 
+  
     async chooseSize(){
-      await this.productSize.click();
+      await this.productSize.check();
     }
 
     async assertProductSizeIsChosen(){
-
+      await expect(this.productSize).toBeChecked();
     }
   }
