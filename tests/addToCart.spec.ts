@@ -1,9 +1,5 @@
-
 import { test } from '@playwright/test';
 import { ProductPage } from '../POMs/productPage';
-
-
-
 
 test('adding product to cart', async ({ page }) => {
   const productPage = new ProductPage(page);
@@ -13,6 +9,5 @@ test('adding product to cart', async ({ page }) => {
   await productPage.addToCart();
 
   await productPage.assertProductAddedToCart();
-  
 
 });

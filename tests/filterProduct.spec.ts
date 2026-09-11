@@ -1,9 +1,5 @@
-
 import { test } from '@playwright/test';
 import { FiltersProductPage } from '../POMs/filtersProductPage';
-
-
-
 
 test('filtering products', async ({ page }) => {
   const filtersProductPage = new FiltersProductPage(page);

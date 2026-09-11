@@ -1,0 +1,63 @@
+Short description:
+Website serves as a demowebshop for inspiration and testing needs. 
+Used tools and test environment:
+•	Windows 11 OS
+•	Google Chrome (152.0.7977.84)
+•	screen resoultion 1920x1080
+•	tool: playwright
+
+Test scope: adding item to cart, navigation, opening the product for more details, selecting clothing size and filtering products.
+
+Test cases
+
+Test case ID: TC-001
+Description: As a user, I expect to be able to add a product to the cart.
+Preconditions: User is on the Consumer goods page.
+Steps:
+1. Open the webpage https://webshopdemo.concrete5.dk/en/webshop-eksempler/forbrugsvare. 
+2. Click on the Add to Cart button.
+Expected Result: The product is added to the cart, "Cauliflower (1pc) and is visible in the cart. 
+Actual result: Test passed, the product was successfully added to the cart.
+
+
+Test Case ID: TC-002
+Description: As a user, I expect to be able to navigate to a product category from the homepage.
+Preconditions: User is on the homepage.
+Steps:
+1. Open the webpage https://webshopdemo.concrete5.dk/en .
+2. From the main menu, click on "Men's clothing (shirts)".
+Expected Result: The category page opens at the URL https://webshopdemo.concrete5.dk/en/webshop-eksempler/webshop-med-herretoj .
+Actual Result: Test passed, the category page opened at the expected URL.
+
+
+Test Case ID: TC-003
+Description: As a user, I expect to be able to open a specific product.
+Preconditions: User is on the homepage.
+Steps:
+1. Open the webpage https://webshopdemo.concrete5.dk/en .
+2. From the main menu, click on "Men's clothing (shirts)".
+3. Click on the product "Casual Men's Shirt 3541".
+Expected Result: The product page opens at the URL https://webshopdemo.concrete5.dk/en/products/mens-casual-shirt-3541 .
+Actual Result: Test passed, the product page opened at the expected URL.
+
+
+Test Case ID: TC-004
+Description: As a user, I expect to be able to select a size for a product.
+Preconditions: User is on the homepage.
+Steps:
+1. Open the webpage https://webshopdemo.concrete5.dk/en .
+2. From the main menu, click on "Men's clothing (shirts)".
+3. Click on the product "Casual Men's Shirt 3541".
+4. Select size "S" for the product.
+Expected Result: The size "S" checkbox is checked.
+Actual Result: Test passed, the size checkbox was successfully checked.
+
+
+Test Case ID: TC-005
+Description: As a user, I expect to be able to filter products by type on a category page.
+Preconditions: User is on the Women's clothing - Demo 2 page.
+Steps:
+1. Open the webpage https://webshopdemo.concrete5.dk/en/webshop-eksempler/webshop-med-dametoj-demo-2 .
+2. Click on the filter "Coat (1)".
+Expected Result: The product list is filtered and shows the product "Casual Business".
+Actual Result: Test passed, the filtered product "Casual Business" was displayed correctly.
