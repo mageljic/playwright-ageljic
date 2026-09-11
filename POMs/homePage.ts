@@ -8,7 +8,7 @@ export class HomePage {
   constructor(page: Page) {
     this.page = page;
     this.menShirtLink = page.locator('#primary-menu').getByRole('link', { name: 'Men\'s clothing (shirts)' }).first();
-    this.productLink = page.locator('div').filter({ hasText: 'Casual Men\'s Shirt 3541DKK' }).nth(3).getByRole('link', { name: 'Casual Men\'s Shirt 3541' });
+    this.productLink = page.getByRole('link', { name: 'Casual Men\'s Shirt 3541' });
     this.productSize = page.locator('#po21-S');
   }
 

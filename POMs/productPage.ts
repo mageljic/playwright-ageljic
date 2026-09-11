@@ -3,12 +3,18 @@ import { Page, Locator, expect } from '@playwright/test';
 export class ProductPage {
   readonly page: Page;
   readonly addToCartButton: Locator;
+  readonly productInCart: Locator;
 
   constructor(page: Page) {
     this.page = page;
+
     this.addToCartButton = page
       .locator('#store-form-add-to-cart-list-62')
       .getByRole('button', { name: 'Add to Cart' });
+
+    this.productInCart = page.getByRole('link', {
+      name: 'Cauliflower (1 pc)'
+    });
   }
 
   async addToCart() {
@@ -16,9 +22,6 @@ export class ProductPage {
   }
 
   async assertProductAddedToCart() {
-    const successMessage = this.page.getByText('Cauliflower (1 pc) has been');
-
-    await expect(successMessage).toBeVisible();
-
+    await expect(this.productInCart).toBeVisible();
   }
 }
